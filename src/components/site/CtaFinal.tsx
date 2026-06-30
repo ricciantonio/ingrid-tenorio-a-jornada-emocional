@@ -1,5 +1,5 @@
 import { ArrowRight, MessageCircle } from "lucide-react";
-import ctaPhoto from "@/assets/ingrid/ingrid-cta.jpeg.asset.json";
+const ctaPhoto = { url: "https://i.imgur.com/oZiJr2D.jpg" };
 import { WHATSAPP_URL } from "./WhatsappFloat";
 
 export function CtaFinal() {
