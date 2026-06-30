@@ -4,7 +4,7 @@ const items = [
   {
     icon: Brain,
     title: "Transtornos Emocionais Graves",
-    desc: "Tratamento especializado para ansiedade, depressão, luto, trauma e crises emocionais — com método, escuta e acolhimento.",
+    desc: "Tratamento especializado para ansiedade, depressão, luto, trauma e crises emocionais.",
   },
   {
     icon: Sparkles,
@@ -23,16 +23,14 @@ export function Especialidades() {
     <section id="especialidades" className="relative bg-muted/40 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-            Especialidades
-          </span>
+          <span className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">Especialidades</span>
           <h2 className="mt-3 font-display text-4xl leading-tight text-foreground sm:text-5xl">
             Onde posso te acompanhar
           </h2>
           <div className="gold-divider mx-auto mt-6 w-24" />
           <p className="mt-6 text-lg text-foreground/75">
-            Três frentes de trabalho construídas para devolver leveza, direção e autonomia
-            emocional a quem busca transformação real.
+            Três frentes de trabalho construídas para devolver leveza, direção e autonomia emocional a quem busca
+            transformação real.
           </p>
         </div>
 
@@ -47,9 +45,7 @@ export function Especialidades() {
               </span>
               <h3 className="font-display text-2xl leading-tight text-foreground">{title}</h3>
               <p className="text-foreground/75">{desc}</p>
-              <span className="mt-auto text-sm font-medium uppercase tracking-[0.18em] text-accent">
-                · · ·
-              </span>
+              <span className="mt-auto text-sm font-medium uppercase tracking-[0.18em] text-accent">· · ·</span>
             </article>
           ))}
         </div>
