@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroPhoto from "@/assets/ingrid/ingrid-hero.jpeg.asset.json";
+const heroPhoto = { url: "https://i.imgur.com/xRgTROM.jpg" };
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { Sobre } from "@/components/site/Sobre";
