@@ -28,33 +28,26 @@ export function Sobre() {
           </div>
 
           <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-              Quem é
-            </span>
-            <h2 className="mt-3 font-display text-4xl leading-tight text-foreground sm:text-5xl">
-              Ingrid Tenorio
-            </h2>
+            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">Quem é</span>
+            <h2 className="mt-3 font-display text-4xl leading-tight text-foreground sm:text-5xl">Ingrid Tenorio</h2>
             <div className="gold-divider mt-6 w-24" />
 
             <div className="mt-7 space-y-5 text-lg leading-relaxed text-foreground/80">
               <p>
-                Terapeuta emocional com{" "}
-                <span className="text-foreground">4 anos dedicados</span> a transformar vidas em
-                Londrina. Acolho cada história com escuta atenta, presença e um olhar humanizado —
-                porque sentir é o primeiro passo para se libertar.
+                Terapeuta emocional com <span className="text-foreground">4 anos dedicados</span> a transformar vidas.
+                Acolho cada história com escuta atenta, presença e um olhar humanizado — porque sentir é o primeiro
+                passo para se libertar.
               </p>
               <p>
-                Meu trabalho une técnica e sensibilidade para que você compreenda o que se passa por
-                dentro, ressignifique dores e construa uma vida com mais consciência, propósito e
-                liberdade.
+                Meu trabalho une técnica e sensibilidade para que você compreenda o que se passa por dentro,
+                ressignifique dores e construa uma vida com mais consciência, propósito e liberdade.
               </p>
             </div>
 
             <blockquote className="mt-8 rounded-2xl border border-accent/40 bg-cream/70 p-6 shadow-soft">
               <Quote className="h-5 w-5 text-primary" />
               <p className="mt-3 font-display text-xl italic leading-snug text-foreground">
-                “Eu trabalho com você para identificar padrões limitantes e construir uma vida com
-                clareza e poder.”
+                “Eu trabalho com você para identificar padrões limitantes e construir uma vida com clareza e poder.”
               </p>
             </blockquote>
           </div>

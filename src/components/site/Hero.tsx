@@ -4,10 +4,7 @@ import { INSTAGRAM_URL, WHATSAPP_URL } from "./WhatsappFloat";
 
 export function Hero() {
   return (
-    <section
-      id="top"
-      className="texture-grain relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28"
-    >
+    <section id="top" className="texture-grain relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
       <div className="texture-grain-overlay" />
       {/* warm radial wash */}
       <div
@@ -23,7 +20,7 @@ export function Hero() {
         <div className="flex flex-col items-start gap-7">
           <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-cream/80 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-brown shadow-soft">
             <MapPin className="h-3.5 w-3.5 text-primary" />
-            Londrina · Paraná
+            Brasil
           </span>
 
           <h1 className="font-display text-5xl leading-[1.02] tracking-tight text-foreground sm:text-6xl md:text-7xl">
@@ -61,7 +58,7 @@ export function Hero() {
 
           <div className="mt-2 flex items-center gap-4 text-sm text-muted-foreground">
             <Sparkles className="h-4 w-4 text-accent" />
-            <span>4 anos transformando vidas em Londrina</span>
+            <span>4 anos transformando vidas</span>
           </div>
         </div>
 

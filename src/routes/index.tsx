@@ -11,9 +11,9 @@ import { CtaFinal } from "@/components/site/CtaFinal";
 import { Footer } from "@/components/site/Footer";
 import { WhatsappFloat } from "@/components/site/WhatsappFloat";
 
-const TITLE = "Ingrid Tenorio — Terapia Emocional em Londrina, PR";
+const TITLE = "Ingrid Tenorio — Terapia Emocional no Brasil todo.";
 const DESCRIPTION =
-  "Acompanhamento emocional especializado em Londrina. Clareza, identidade e poder pessoal — 4 anos de experiência transformando vidas.";
+  "Acompanhamento emocional especializado. Clareza, identidade e poder pessoal — 4 anos de experiência transformando vidas.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
