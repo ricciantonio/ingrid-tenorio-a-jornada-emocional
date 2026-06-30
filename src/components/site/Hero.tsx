@@ -1,5 +1,5 @@
 import { ArrowRight, Instagram, MapPin, Sparkles } from "lucide-react";
-import heroPhoto from "@/assets/ingrid/ingrid-hero.jpeg.asset.json";
+const heroPhoto = { url: "https://i.imgur.com/xRgTROM.jpg" };
 import { INSTAGRAM_URL, WHATSAPP_URL } from "./WhatsappFloat";
 
 export function Hero() {

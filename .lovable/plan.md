@@ -1,45 +1,35 @@
 ## Objetivo
-Substituir a seção "Como funciona" atual (layout em grid com foto lateral e lista de passos) por um carousel de 3 cards interativos, com navegação por setas e indicadores de posição (dots).
+Substituir as imagens atuais (servidas via `.asset.json` no CDN do Lovable) pelas URLs do Imgur fornecidas, em todos os componentes do site.
+
+## Mapeamento
+
+| Asset atual | Nova URL |
+|---|---|
+| `ingrid-hero.jpeg` | https://i.imgur.com/xRgTROM.jpg |
+| `ingrid-sobre.jpeg` | https://i.imgur.com/fPpqVvW.jpg |
+| `cafe-europeu-1.jpeg` | https://i.imgur.com/jG3uTfS.jpg |
+| `cafe-europeu-2.jpeg` | https://i.imgur.com/RSeUYUl.jpg |
+| `ingrid-especialidades.jpeg` | *(não fornecida — manter atual)* |
+| `ingrid-comofunciona.jpeg` | *(não fornecida — manter atual, caso ainda referenciada)* |
+| `ingrid-cta.jpeg` | *(não fornecida — manter atual)* |
+
+Você listou 4 URLs e escreveu "adicione as outras conforme necessário". Existem 3 outras imagens no projeto (especialidades, comofunciona, cta) sem URL correspondente. **Vou manter essas três como estão** (continuam servidas pelo CDN atual). Se quiser substituí-las também, me envie os links.
 
 ## Alterações
 
-### 1. Componente `src/components/site/ComoFunciona.tsx` — Reescrita completa
-- **Remover**: layout atual com foto lateral e lista numerada de 4 passos.
-- **Adicionar**: carousel usando o componente `Carousel` já existente em `src/components/ui/carousel.tsx` (baseado em Embla Carousel).
-- **3 cards** com os seguintes conteúdos:
+Em cada componente que importa um `.asset.json`, trocar o import por uma constante string com a URL do Imgur:
 
-  **CARD 1 — "Como começamos?"**
-  Antes de qualquer coisa, existe uma conversa inicial. Esse não é o início do tratamento, é o momento de entender sua história.
-  - Seu histórico emocional
-  - O que você já viveu
-  - O que te trouxe até aqui
-  - Essa primeira conversa é gratuita (até 40 minutos).
+- `src/components/site/Hero.tsx` → `heroPhoto.url` vira `"https://i.imgur.com/xRgTROM.jpg"`
+- `src/components/site/Sobre.tsx` → `sobrePhoto.url`, `cafe1.url`, `cafe2.url` viram as 3 URLs correspondentes
+- `src/routes/index.tsx` → `heroPhoto.url` usado em `og:image`/`twitter:image` vira a URL do Imgur do hero
 
-  **CARD 2 — "Como funciona o processo?"**
-  Trabalho apenas com acompanhamento mensal usando a técnica TRG (Tratamento de Reprocessamento Generativo).
-  - Avaliações mensais
-  - Exercícios semanais
-  - Acompanhamento contínuo
+Os arquivos `.asset.json` em `src/assets/ingrid/` não serão deletados (caso queira reverter), mas deixam de ser importados quando trocados.
 
-  **CARD 3 — "Qual é o objetivo?"**
-  Reprocessar como seu cérebro e corpo armazenam experiências, para que deixem de gerar reações automáticas.
-  - Redução de reações emocionais intensas
-  - Quebra de padrões repetitivos
-  - Mais clareza emocional e mental
-  - Estabilidade interna
-  - Mudança na forma de reagir
+## Verificação
 
-- **Navegação**: setas laterais (esquerda/direita) e indicadores de posição (dots abaixo dos cards).
-- **Estilo**: manter o visual elegante do site — cores douradas (`--gold`, `--accent`), fundo escuro ou tom quente compatível, tipografia `font-display`, bordas refinadas e sombras suaves. Cards com boa legibilidade e espaçamento generoso.
-- **Responsivo**: em mobile, os cards ocupam largura total com padding adequado para toque.
+1. `bun run build` para confirmar que não há imports quebrados.
+2. Playwright headless em `http://localhost:8080`: abrir a home, rolar a página, capturar screenshots desktop (1280) e mobile (390), e checar no console que cada `<img>` substituído tem `naturalWidth > 0` (Imgur carregou).
 
-### 2. Dependências
-- O projeto já possui `embla-carousel-react` instalado (usado em `src/components/ui/carousel.tsx`). Nenhuma instalação adicional é necessária.
+## Observação sobre Imgur
 
-### 3. Arquivos envolvidos
-- `src/components/site/ComoFunciona.tsx` — reescrita completa.
-- `src/routes/index.tsx` — não requer alteração (já importa e renderiza `<ComoFunciona />`).
-
-### 4. Verificação
-- Compilar o projeto para garantir ausência de erros de tipo (TypeScript) e imports corretos.
-- Verificar responsividade em diferentes viewports.
+Imgur às vezes aplica hotlink protection e devolve a imagem "removed.png" quando carregada fora do imgur.com. Se isso acontecer no preview, a alternativa recomendada é fazer upload das imagens como assets do projeto (`lovable-assets create`) em vez de hotlink. Vou avisar caso a verificação detecte.
