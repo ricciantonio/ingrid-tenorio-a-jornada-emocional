@@ -1,7 +1,7 @@
 import { Quote } from "lucide-react";
-import sobrePhoto from "@/assets/ingrid/ingrid-sobre.jpeg.asset.json";
-import cafe1 from "@/assets/ingrid/cafe-europeu-1.jpeg.asset.json";
-import cafe2 from "@/assets/ingrid/cafe-europeu-2.jpeg.asset.json";
+const sobrePhoto = { url: "https://i.imgur.com/fPpqVvW.jpg" };
+const cafe1 = { url: "https://i.imgur.com/jG3uTfS.jpg" };
+const cafe2 = { url: "https://i.imgur.com/RSeUYUl.jpg" };
 
 export function Sobre() {
   return (
