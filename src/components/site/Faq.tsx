@@ -1,9 +1,4 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const items = [
   {
@@ -24,7 +19,7 @@ const items = [
   },
   {
     q: "Atende pacientes em Londrina e região?",
-    a: "Sim. Atendo presencialmente em Londrina e também online para pessoas de outras cidades — com a mesma qualidade de presença e cuidado.",
+    a: "Sim. Atendo online para pessoas de outras cidades — com a mesma qualidade de presença e cuidado.",
   },
 ];
 
@@ -33,12 +28,8 @@ export function Faq() {
     <section id="faq" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-3xl px-5 sm:px-8">
         <div className="text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-            Dúvidas frequentes
-          </span>
-          <h2 className="mt-3 font-display text-4xl leading-tight text-foreground sm:text-5xl">
-            Antes de começar
-          </h2>
+          <span className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">Dúvidas frequentes</span>
+          <h2 className="mt-3 font-display text-4xl leading-tight text-foreground sm:text-5xl">Antes de começar</h2>
           <div className="gold-divider mx-auto mt-6 w-24" />
         </div>
 
@@ -52,9 +43,7 @@ export function Faq() {
               <AccordionTrigger className="text-left font-display text-lg text-foreground hover:no-underline sm:text-xl">
                 {it.q}
               </AccordionTrigger>
-              <AccordionContent className="text-base text-foreground/75">
-                {it.a}
-              </AccordionContent>
+              <AccordionContent className="text-base text-foreground/75">{it.a}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
